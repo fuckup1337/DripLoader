@@ -21,4 +21,9 @@ Evasive shellcode loader for bypassing event-based injection detection, without 
 - Bypasses simple thread-centric scanners like `Get-InjectedThread`. Persisting within a process is another story, and this is up to the payload author. 
 - It is `sRDI`-compatible, but if your payload creates another local thread you will lose the benefit of thread start address in `ntdll`.
 
+To test it out of the box
+- compile/download
+- XOR your binary shellcode blob file with default key 0x08
+- run it and follow the prompts or ./DripLoader.exe <target_pid> <delay_per_step_ms>
+
 ![driploader](https://user-images.githubusercontent.com/32537788/116470458-bc5f4e00-a873-11eb-9fca-42e277f6a3eb.png)
