@@ -3,7 +3,7 @@ Evasive shellcode loader for bypassing event-based injection detection, without 
 
 ## DripLoader evades common EDRs by:
 - using the most risky APIs possible like `NtAllocateVirtualMemory` and `NtCreateThreadEx`
-- blending with call arguments, vendors are forced to drop most by default, or log but can't detect
+- blending in with call arguments to create events that vendors are forced to drop or log&ignore due to volume
 - avoiding multi-event correlation by introducing delays 
 
 ## What does DripLoader do
