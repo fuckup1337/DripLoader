@@ -16,8 +16,10 @@ Evasive shellcode loader for bypassing event-based injection detection, without 
 - Overwrites prologue of one `ntdll` function in the remote process memory space with a `jmp` to our base
 - Drops a thread on that trampoline 
 
+I'll explain the thinking behind each step in a blog post comming end of the week.
+
 ## And so
-- It's able to bypass Defender ATP VM allocation alerting, and others. I'll explain the thinking behind each step in a blog post comming end of the week.
+- It's able to fully bypass many EDR injection detections, including Defender ATP. 
 - Bypasses simple thread-centric scanners like `Get-InjectedThread`. Persisting within a process is another story, and this is up to the payload author. 
 - It is `sRDI`-compatible, but if your payload creates another local thread you will lose the benefit of thread start address in `ntdll`.
 
